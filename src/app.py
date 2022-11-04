@@ -16,19 +16,18 @@ api = Api(app)
 
 model = pickle.load( open( "../data/trained_model.p", "rb" ) )
 
-class Scoring(Resource):
+class Predict(Resource):
     def post(self):
         json_data = request.get_json()
+        print(json_data)
         df = pd.DataFrame(json_data.values(), index=json_data.keys()).transpose()
-        # getting predictions from our model.
         # it is much simpler because we used pipelines during development
-        res = model.predict_proba(df)
+        res = model.predict(df)
         # we cannot send numpt array as a result
-        return res.tolist() 
+        return res.tolist()
 
 
-api.add_resource(Scoring, '/scoring')
-
+api.add_resource(Predict, '/predict')
 
 app.run(debug=True, host='0.0.0.0', port=5002)
 
