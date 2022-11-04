@@ -16,7 +16,6 @@ api = Api(app)
 
 model = pickle.load( open( "../data/trained_model.p", "rb" ) )
 
-
 class Scoring(Resource):
     def post(self):
         json_data = request.get_json()
