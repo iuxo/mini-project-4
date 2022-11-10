@@ -36,8 +36,8 @@ After pipelining and pickling the model I created. I deployed it to an AWS insta
 
 ## Results/Demo
 To get a prediction, you have to send a JSON payload via the request library or using Postman. Here is an example with the predicition.
-![Screenshot](/images/request_proj_4.png?raw=true)
-![Screenshot](/images/predict_proj_4.png?raw=true)
+![Screenshot](https://raw.githubusercontent.com/iuxo/mini-project-4/master/images/request_proj_4.png)
+![Screenshot](https://raw.githubusercontent.com/iuxo/mini-project-4/master/images/predict_proj_4.png)
 
 ## Challanges 
 It was difficult trying to use the pipeline as there were multiple transformers and trying to figure out exactly in exactly what process should the transforms happen took a good chunk of time.
